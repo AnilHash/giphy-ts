@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
-import { SearchContext, SearchContextType } from "../../App";
+import { SearchContext } from "../../App";
+import { SearchContextType } from "../../Types";
+import Button from "../CommonJSX/Button";
 
 const SearchBox = () => {
   const { handleSearch } = useContext(SearchContext) as SearchContextType;
@@ -13,9 +15,9 @@ const SearchBox = () => {
         placeholder="Type here..."
         onKeyDown={(e) => e.code === "Enter" && handleSearch(search)}
       />
-      <button onClick={() => handleSearch(search)}>
+      <Button onClick={() => handleSearch(search)}>
         <span className="material-symbols-outlined">search</span>
-      </button>
+      </Button>
     </>
   );
 };

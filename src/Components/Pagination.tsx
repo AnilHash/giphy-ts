@@ -1,12 +1,7 @@
 import React from "react";
+import { paginationProps } from "../Types";
 
-interface paginationProps {
-pageInfo:{
-  offset:number;
-  count:number;
-};
-paginationHandle: (count:number)=>void;
-}
+
 
 const Pagination:React.FC<paginationProps> = ({ pageInfo, paginationHandle }) => {
   const { offset, count } = pageInfo;

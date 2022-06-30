@@ -1,10 +1,6 @@
 import React from "react";
-import { gifType } from "../../App";
+import { cardProps } from "../../Types";
 
-interface cardProps {
-  gif: gifType,
-  handleModal: (card_id:string)=> void;
-}
 
 const Card: React.FC<cardProps> = ({ gif, handleModal }) => {
   return (

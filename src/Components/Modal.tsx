@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { gifType } from "../App";
 import "../styles/components/modal.scss";
-
-interface modalProps {
-id:string;
-onClose:()=>void;
-}
+import { gifType, modalProps } from "../Types";
 
 const Modal:React.FC<modalProps> = ({ id, onClose }) => {
   const [gif, setGif] = useState<gifType>();

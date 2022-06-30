@@ -5,23 +5,8 @@ import Footer from "./Components/Footer";
 import NavBar from "./Components/Navbar/NavBar";
 import Pagination from "./Components/Pagination";
 import "./styles/style.scss";
+import { SearchContextType } from './Types';
 
-export interface SearchContextType {
-  handleSearch:(searchString:string)=>void
-};
-interface imgType {
-  original: {
-    url:string;
-  },
-  preview_gif: {
-    url:string;
-  }
-}
-export interface gifType {
-  id: string;
-  title: string;
-  images: imgType;
-} 
 
 export const SearchContext = createContext<SearchContextType|undefined>(undefined);
 

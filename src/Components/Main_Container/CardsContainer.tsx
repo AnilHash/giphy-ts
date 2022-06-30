@@ -3,11 +3,8 @@ import Card from "./Card";
 
 import "../../styles/components/cardcontainer.scss";
 import Modal from "../Modal";
-import { gifType } from "../../App";
+import { gifType, Props } from "../../Types";
 
-interface Props {
-  cards : gifType[];
-}
 
 const CardsContainer:React.FC<Props> = ({ cards }) => {
   const [id, setId] = useState('');
@@ -18,7 +15,7 @@ const CardsContainer:React.FC<Props> = ({ cards }) => {
   }
   return (
     <div className="cards-container">
-      {cards?.map((gif) => (
+      {cards?.map((gif: gifType) => (
         <Card key={gif.id} gif={gif} handleModal={handleModal} />
       ))}
 
