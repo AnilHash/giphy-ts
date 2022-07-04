@@ -10,9 +10,11 @@ const SearchBox = () => {
   function onChange(str: string) {
     setSearch(str);
   }
-  // function enterKeyPressHandle(data){
-
-  // }
+  function onKeyDown(code: string) {
+    if (code === "Enter") {
+      handleSearch(search);
+    }
+  }
   return (
     <>
       <Input
@@ -20,6 +22,7 @@ const SearchBox = () => {
         placeholder="Type here..."
         value={search}
         onChange={onChange}
+        onKeyDown={onKeyDown}
       />
       <Button onClick={() => handleSearch(search)}>
         <span className="material-symbols-outlined">search</span>
