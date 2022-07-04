@@ -1,17 +1,17 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from "react";
 
 import CardsContainer from "./Components/Main_Container/CardsContainer";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/Navbar/NavBar";
 import Pagination from "./Components/Pagination";
 import "./styles/style.scss";
-import { SearchContextType } from './Types';
+import { SearchContextType } from "./Types";
 
-
-export const SearchContext = createContext<SearchContextType|undefined>(undefined);
+export const SearchContext = createContext<SearchContextType | undefined>(
+  undefined
+);
 
 function App() {
-
   const baseURL = `https://api.giphy.com/v1/gifs`;
   const [search, setSearch] = useState("");
   const API_KEY = process.env.REACT_APP_API_KEY!;
@@ -22,10 +22,10 @@ function App() {
   };
   const [gifData, setGifData] = useState();
   const [pagination, setPagination] = useState(initialPageValue);
-  function handleSearch(searchString:string) {
+  function handleSearch(searchString: string) {
     setSearch(searchString);
   }
-  function paginationHandle(pageCount:number) {
+  function paginationHandle(pageCount: number) {
     setPagination((prevState) => ({
       ...pagination,
       offset: prevState.offset + pageCount,
@@ -37,7 +37,7 @@ function App() {
     }
     return `${baseURL}/trending?api_key=${API_KEY}&limit=${pagination.count}&rating=g&offset=${pagination.offset}`;
   }
-  useEffect(()=>{
+  useEffect(() => {
     fetch(urlCreater())
       .then((response) => response.json())
       .then((data) => {
@@ -55,7 +55,9 @@ function App() {
       <SearchContext.Provider value={{ handleSearch }}>
         <NavBar />
       </SearchContext.Provider>
-      {gifData && (
+      {!gifData ? (
+        <div className="loader"></div>
+      ) : (
         <>
           <CardsContainer cards={gifData} />
           <Pagination

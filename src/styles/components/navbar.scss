@@ -44,7 +44,9 @@
 
         input {
             min-width: 140px;
-
+            border-radius: 20px;
+            background: inherit;
+            text-align: center;
             width: 20vw;
             font-size: 1.2rem;
         }

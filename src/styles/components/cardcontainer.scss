@@ -10,12 +10,14 @@
         margin: max(1vh, 1vw);
         padding: 2rem;
         background-color: #fdfcfc;
-        box-shadow: 5px 0px 8px 10px #888888;
-        transition: transform .2s;
+        box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8) inset, -12px 0 8px -4px rgba(31, 73, 125, 0.8) inset;
+        border-radius: 20px;
+        transition: transform .5s;
 
         &:hover {
             transform: scale(1.1);
             cursor: pointer;
+            box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 15px -4px rgba(31, 73, 125, 0.8);
         }
 
         img {

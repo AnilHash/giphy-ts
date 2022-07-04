@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface SearchContextType {
   handleSearch: (searchString: string) => void;
 }
@@ -36,7 +38,7 @@ export interface ButtonType {
   // type: string;
   disabled?: boolean;
   onClick: () => void;
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 export interface Props {
   cards: gifType[];

@@ -12,8 +12,13 @@
     justify-content: center;
 
     .modal-content {
-        width: rem(500px);
+        width: fit-content;
         background-color: #fff;
+        border-radius: 20px;
+    }
+
+    .button {
+        float: right;
     }
 
     .modal-header,

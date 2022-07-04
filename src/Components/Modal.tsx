@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/components/modal.scss";
 import { gifType, modalProps } from "../Types";
 
-const Modal:React.FC<modalProps> = ({ id, onClose }) => {
+const Modal: React.FC<modalProps> = ({ id, onClose }) => {
   const [gif, setGif] = useState<gifType>();
 
   useEffect(() => {
@@ -15,19 +15,24 @@ const Modal:React.FC<modalProps> = ({ id, onClose }) => {
   }, [id]);
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <div className="modal-header">
-          <h4 className="modal-title">{gif?.title}</h4>
-        </div>
-        <div className="modal-body">
-          <img src={gif?.images.original.url} width="300" height="300" alt="" />
-        </div>
-        <div className="modal-footer">
-          <button className="button" onClick={onClose}>
-            close
-          </button>
-        </div>
+    <div className="modal" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {!gif?.title ? (
+          <div className="loader"></div>
+        ) : (
+          <>
+            <div className="modal-header">
+              <button className="button" onClick={onClose}>
+                X
+              </button>
+              <h4 className="modal-title">{gif?.title}</h4>
+            </div>
+            <div className="modal-body">
+              <img src={gif?.images.original.url} alt="" />
+            </div>
+            <div className="modal-footer"></div>
+          </>
+        )}
       </div>
     </div>
   );
