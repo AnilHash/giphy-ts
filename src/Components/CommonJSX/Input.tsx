@@ -1,13 +1,5 @@
 import React from "react";
-
-interface InputType {
-  name: string;
-  type?: string;
-  value: string;
-  placeholder: string;
-  onChange: (str: string) => void;
-  onKeyDown?: (code: string) => void;
-}
+import { InputType } from "../../Types";
 
 const Input: React.FC<InputType> = ({
   name,

@@ -43,3 +43,12 @@ export interface ButtonType {
 export interface Props {
   cards: gifType[];
 }
+
+export interface InputType {
+  name: string;
+  type?: string;
+  value: string;
+  placeholder: string;
+  onChange: (str: string) => void;
+  onKeyDown?: (code: string) => void;
+}
