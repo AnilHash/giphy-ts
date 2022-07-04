@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/components/modal.scss";
 import { gifType, modalProps } from "../Types";
+import Button from "./CommonJSX/Button";
 
 const Modal: React.FC<modalProps> = ({ id, onClose }) => {
   const [gif, setGif] = useState<gifType>();
@@ -22,9 +23,9 @@ const Modal: React.FC<modalProps> = ({ id, onClose }) => {
         ) : (
           <>
             <div className="modal-header">
-              <button className="button" onClick={onClose}>
+              <Button className={"button"} onClick={onClose}>
                 X
-              </button>
+              </Button>
               <h4 className="modal-title">{gif?.title}</h4>
             </div>
             <div className="modal-body">

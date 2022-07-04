@@ -1,10 +1,11 @@
-import { ButtonType } from "../../Types"
+import { ButtonType } from "../../Types";
 
-
-const Button : React.FC<ButtonType> = ({onClick, children}) => {
+const Button: React.FC<ButtonType> = ({ onClick, className, children }) => {
   return (
-    <button onClick={onClick}>{children}</button>
-  )
-}
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;

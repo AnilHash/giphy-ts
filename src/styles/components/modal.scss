@@ -14,11 +14,12 @@
     .modal-content {
         width: fit-content;
         background-color: #fff;
-        border-radius: 20px;
+        border-radius: rem(20px);
     }
 
     .button {
         float: right;
+        border: none;
     }
 
     .modal-header,

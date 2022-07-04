@@ -30,8 +30,8 @@ body {
         border-bottom: 16px solid c.$color;
         /* Blue */
         border-radius: 50%;
-        width: 60px;
-        height: 60px;
+        width: rem(60px);
+        height: rem(60px);
         animation: spin 2s linear infinite;
     }
 

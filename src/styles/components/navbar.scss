@@ -1,10 +1,11 @@
 @use "../util/colors" as c;
+@use "../util/functions" as *;
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: rem(80px);
     border-bottom: 2px solid c.$black;
 
     h1 {
@@ -25,13 +26,14 @@
         & input,
         & button {
             margin-right: 2vw;
-            height: 32px;
+            height: rem(36px);
+            border-radius: 50%;
         }
 
         button {
             width: fit-content;
             padding: 0 .5rem;
-            max-width: 140px;
+            max-width: rem(140px);
 
             .material-symbols-outlined {
                 font-variation-settings:
@@ -43,8 +45,8 @@
         }
 
         input {
-            min-width: 140px;
-            border-radius: 20px;
+            min-width: rem(140px);
+            border-radius: rem(20px);
             background: inherit;
             text-align: center;
             width: 20vw;

@@ -35,7 +35,8 @@ export interface cardProps {
 }
 
 export interface ButtonType {
-  // type: string;
+  type?: string;
+  className?: string;
   disabled?: boolean;
   onClick: () => void;
   children: React.ReactNode;
@@ -45,6 +46,7 @@ export interface Props {
 }
 
 export interface InputType {
+  className?: string;
   name: string;
   type?: string;
   value: string;
